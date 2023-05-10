@@ -31,7 +31,7 @@
   - LibVLCSharp.WPF 
   - DB 데이터바인딩 
 - ▼ Monitoring Room MainWindow
-<img src = "https://raw.githubusercontent.com/MyMoney5JO/MyMoney5JO/main/Image/Opencv_Pyqt2.jpg" width = "600"/>
+<img src = "https://raw.githubusercontent.com/MyMoney5JO/MM5JO/main/Image/MonitoringRoomMW_WIP.png" width = "800"/>
 
 
 ### OpenCV 파트   - 이태윤
