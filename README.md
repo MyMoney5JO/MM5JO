@@ -22,7 +22,7 @@
 <img src = "https://raw.githubusercontent.com/MyMoney5JO/MyMoney5JO/main/Image/Opencv_Pyqt2.jpg" width = "600"/>
 
 
-## 미니프로젝트 2차 (5월 2일 ~ 5월 16일)
+## 미니프로젝트 2차 (5월 2일 ~ 5월 17일)
 ### GUI 파트      - 임채연, 임수진
 - 상황실 MainWindow / 로그인 창 / 사고발생처리 창 / DB 관리 창 / 추후추가
   - WPF (C#)
@@ -32,6 +32,10 @@
   - DB 데이터바인딩 
 - ▼ Monitoring Room MainWindow
 <img src = "https://raw.githubusercontent.com/MyMoney5JO/MM5JO/main/Image/MonitoringRoomMW_WIP.png" width = "800"/>
+
+- ▼ Emergency 화면
+<img src = "https://raw.githubusercontent.com/MyMoney5JO/MM5JO/main/Image/Emergency.png" width = "800"/>
+
 
 
 ### OpenCV 파트   - 이태윤
