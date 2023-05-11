@@ -43,6 +43,8 @@
 ### DataBase 파트 - 이가연, 조원준
 - 관리자 정보 DB 생성
   - 로그인 DB 바인딩
+- ▼ Login Window
+<img src = "https://raw.githubusercontent.com/MyMoney5JO/MM5JO/main/Image/DbBinding01.gif" width = "800"/>
 
 
 ## 미니프로젝트 3차 (7월 17일 ~ 7월 27일)
