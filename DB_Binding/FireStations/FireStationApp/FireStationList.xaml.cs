@@ -23,7 +23,7 @@ namespace FireStationApp
         {
             #region <CVS 파일 읽어와서 DB에 저장>
 
-            string filepath = "D:/Source/MM5JO/DB_Binding/DataBase/FireStationList.csv"; // 불러올 CVS 파일 경로
+            string filepath = "C:/Source/MM5JO/DB_Binding/DataBase/FireStationList.csv"; // 불러올 CVS 파일 경로
 
             using (StreamReader reader = new StreamReader(filepath))
             {
@@ -36,6 +36,7 @@ namespace FireStationApp
                 for (string line = reader.ReadLine(); line != null; line = reader.ReadLine())
                 // 두번째 줄 부터 읽어올거라서 변수 line에 reder.ReadLine(); 대입
                 // 반복을 진행하면서 line에 reader.ReadLine()을 대입하면 다음 줄을 읽어옴
+                // 마지막 조건 line = reader.ReadLine() 없으면 처음 읽어오는 값(두번째 줄)로 무한루프걸림!!!!!
                 {
                     string[] values = line.Split(',');  // values 배열에 CSV 파일의 한 줄 저장
 
