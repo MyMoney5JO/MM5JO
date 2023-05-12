@@ -14,6 +14,7 @@
                   IsReadOnly="True" Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
                   ItemsSource="{Binding}" AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="번호"/>
                 <DataGridTextColumn Binding="{Binding District}" Header="관할"/>
                 <DataGridTextColumn Binding="{Binding StationName}" Header="119안전센터"/>
                 <DataGridTextColumn Binding="{Binding Address}" Header="주소"/>

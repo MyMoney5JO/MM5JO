@@ -1,10 +1,15 @@
 ﻿using FireStationApp.Logics;
+using FireStationApp.Models;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
-
+using System.Windows.Documents;
 
 namespace FireStationApp
 {
@@ -16,12 +21,9 @@ namespace FireStationApp
         public FireStationList()
         {
             InitializeComponent();
-        }
 
-
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
             #region <CVS 파일 읽어와서 DB에 저장>
+            // Load 이벤트 안에 넣으면 Load 될 때 마다 DB에 저장함 => 밖으로 빼면 한 번만 저장 될까? // 안됨.. 중복저장됨
 
             string filepath = "C:/Source/MM5JO/DB_Binding/DataBase/FireStationList.csv"; // 불러올 CVS 파일 경로
 
@@ -64,7 +66,7 @@ namespace FireStationApp
                     using (MySqlConnection conn = new MySqlConnection(Commons.MyConnString))
                     {
                         if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
-                        
+
                         var query = @"INSERT INTO firestationtb
 			                                        (District,
 			                                        StationName,
@@ -79,7 +81,7 @@ namespace FireStationApp
 			                                        @Longitude,
 			                                        @Latitude,
 			                                        @Tel)";
-                        
+
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.Parameters.AddWithValue("@District", values[0]);
                         cmd.Parameters.AddWithValue("@StationName", values[1]);
@@ -88,10 +90,62 @@ namespace FireStationApp
                         cmd.Parameters.AddWithValue("@Latitude", values[4]);
                         cmd.Parameters.AddWithValue("@Tel", values[5]);
                         cmd.ExecuteNonQuery();
-                    }  
+                    }
                 }
             }
             #endregion
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            #region < DB 읽어와서 그리드에 뿌리기>
+            this.DataContext = null;
+
+            List<Locations> list = new List<Locations>();
+
+            try
+            {
+                using( MySqlConnection conn = new MySqlConnection(Commons.MyConnString))
+                {
+                    if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
+
+                    var searchquery = @"SELECT Id,
+                                          District,
+                                          StationName,
+                                          Address,
+                                          Longitude,
+                                          Latitude,
+                                          Tel
+                                     FROM firestationtb;";
+
+                    var cmd = new MySqlCommand(searchquery, conn);
+                    var adapter = new MySqlDataAdapter(cmd);
+                    var dSet = new DataSet();
+                    adapter.Fill(dSet, "Locations");
+
+                    foreach (DataRow dr in dSet.Tables["Locations"].Rows)
+                    {
+                        list.Add(new Locations
+                        {
+                            Id = Convert.ToInt32(dr["Id"]),
+                            District = Convert.ToString(dr["District"]),
+                            StationName = Convert.ToString(dr["StationName"]),
+                            Address = Convert.ToString(dr["Address"]),
+                            Latitude = Convert.ToDouble(dr["Latitude"]),
+                            Longitude = Convert.ToDouble(dr["Longitude"]),
+                            Tel = Convert.ToString(dr["Tel"]),
+                        });
+                    }
+                    this.DataContext = list;
+                }
+            }
+            catch(Exception ex)
+            {
+                this.ShowMessageAsync("오류", $"DB조회 오류 {ex.Message}", MessageDialogStyle.Affirmative, null);
+            }
+            #endregion
+
+            
         }
     }
 }
