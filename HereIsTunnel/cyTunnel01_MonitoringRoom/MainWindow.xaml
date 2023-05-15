@@ -102,23 +102,23 @@
                         Style="{StaticResource MahApps.Styles.Button.Circle}" Click="Btnsolution_Click"
                         Foreground="White" Background="#FF7F7F7F" BorderBrush="#FFEDE9E9" />
 
-            <Button Grid.Column="1" x:Name="BtnGenDBControl" Content="DB관리" 
-                        Margin="10" Padding="15"
-                        Height="100" Width="100"
-                        HorizontalAlignment="Center" FontSize="14"
-                        Style="{StaticResource MahApps.Styles.Button.Circle}" Click="BtnGenDBControl_Click"
-                        Foreground="Orange">
-            </Button>
-
-            <Button Grid.Column="2" x:Name="Btnwhat" Content="아직몰라" 
+            <Button Grid.Column="1" x:Name="BtnLCD" Content="LCD 제어"
                         Margin="10"  Padding="10"
                         Height="100" Width="100"
                         HorizontalAlignment="Center" FontSize="14"
-                        Style="{StaticResource MahApps.Styles.Button.Circle}" Click="Btnwhat_Click"
+                        Style="{StaticResource MahApps.Styles.Button.Circle}" Click="BtnLCD_Click"
                         Foreground="Orange" >
             </Button>
 
-            <Button Grid.Column="3" x:Name="Btn" Content="몰라" 
+            <Button Grid.Column="2" x:Name="BtnMngDBControl" Content="DB관리" 
+                        Margin="10" Padding="15"
+                        Height="100" Width="100"
+                        HorizontalAlignment="Center" FontSize="14"
+                        Style="{StaticResource MahApps.Styles.Button.Circle}" Click="BtnMngDBControl_Click"
+                        Foreground="Orange">
+            </Button>
+
+            <Button Grid.Column="3" x:Name="Btn" Content="H/W" 
                         Margin="10" Padding="25"
                         Height="100" Width="100"
                         HorizontalAlignment="Center" FontSize="14"

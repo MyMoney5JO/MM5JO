@@ -235,5 +235,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp_cctv0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp_cctv2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp_cctv1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp_cctv3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp_cctv4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

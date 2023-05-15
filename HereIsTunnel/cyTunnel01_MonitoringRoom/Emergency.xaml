@@ -86,7 +86,8 @@
                 <Button x:Name="BtnStop" Content="처리완료" Margin="0,0,0,25" 
             HorizontalAlignment="Center" FontSize="30"
             Style="{StaticResource MahApps.Styles.Button.Circle}"  
-            Foreground="Orange" Width="150" Height="150" Click="BtnCrash_Click"/>
+            Foreground="Orange" Width="150" Height="150" Click="BtnCrash_Click" 
+                        BorderBrush="#FFFB7474" Background="#FFF9F9F9" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
 

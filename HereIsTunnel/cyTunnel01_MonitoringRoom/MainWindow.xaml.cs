@@ -45,10 +45,11 @@ namespace cyTunnel01_MonitoringRoom
             subWin.ShowDialog();
         }
 
-        private void BtnGenDBControl_Click(object sender, RoutedEventArgs e)
+        private void BtnMngDBControl_Click(object sender, RoutedEventArgs e)
         {
             var subWin = new DBmanagement();
-            subWin.ShowDialog();
+                        subWin.ShowDialog();
         }
+
     }
 }
