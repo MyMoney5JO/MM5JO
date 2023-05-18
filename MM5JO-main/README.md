@@ -43,6 +43,8 @@
 
 ### 하드웨어 파트 - 이수진
 - 웹캠
+- GUI
+<img src = "https://raw.githubusercontent.com/MyMoney5JO/MM5JO/main/Image/Monitoring.v1.gif" width = "800"/>
 
 ### DataBase 파트 - 이가연, 조원준
 - 관리자 정보 DB 생성
