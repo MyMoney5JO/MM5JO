@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Orientation="Horizontal">
             <Label Content="LCD 1" VerticalAlignment="Center" FontSize="14" Margin="10,0,5,0"/>
-            <ComboBox x:Name="Cbo" Width="100" FontSize="14" VerticalAlignment="Center"
-                          Style="{StaticResource MahApps.Styles.ComboBox}" SelectionChanged="CboRoomName_SelectionChanged" />
+            <ComboBox x:Name="Cbo" Width="179" FontSize="14"
+                          Style="{StaticResource MahApps.Styles.ComboBox}" SelectionChanged="CboRoomName_SelectionChanged" Height="33" />
         </StackPanel>
 
     </Grid>
