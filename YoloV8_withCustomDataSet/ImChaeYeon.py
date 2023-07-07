@@ -5,8 +5,9 @@ from ultralytics import YOLO
 model = YOLO("best.pt")
 
 # Open the video file
-video_path = "tEsT.mp4"
-cap = cv2.VideoCapture(video_path)
+# video_path = "tEsT.mp4"
+# cap = cv2.VideoCapture(video_path)
+cap = cv2.VideoCapture(0)
 
 # Loop through the video frames
 while cap.isOpened():
@@ -16,6 +17,12 @@ while cap.isOpened():
     if success:
         # Run YOLOv8 inference on the frame
         results = model(frame)
+
+        # for i in range(len(results[0].boxes)) :
+        #     if results[0].boxes.conf[i] < 60 :
+        #         results[0].boxes
+        
+
 
         # Visualize the results on the frame
         annotated_frame = results[0].plot()
