@@ -36,7 +36,7 @@ class BackgroungWorker(QThread) :
 class qtApp(QMainWindow) : 
     def __init__(self) :
         super().__init__()
-        uic.loadUi('PlateDetectApp.ui',self)
+        uic.loadUi('detectApp.ui',self)
         self.thread = BackgroungWorker()
 
         self.thread.start() 
